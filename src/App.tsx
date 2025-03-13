@@ -39,7 +39,12 @@ const useGlobalStore = create<GlobalType>((set) => ({
     })),
 }));
 
-function InputAdd({ setOpen, open }) {
+type InputAddProps = {
+  open: boolean;
+  setOpen: (value: boolean) => void;
+};
+
+function InputAdd({ setOpen, open }:InputAddProps) {
   const onClose = () => {
     setOpen(false);
   };
